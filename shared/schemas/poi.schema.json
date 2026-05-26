@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "POI",
+  "type": "object",
+  "required": ["osm_id", "lat", "lon", "category", "name"],
+  "properties": {
+    "osm_id": { "type": "integer" },
+    "lat": { "type": "number", "minimum": -90, "maximum": 90 },
+    "lon": { "type": "number", "minimum": -180, "maximum": 180 },
+    "category": {
+      "type": "string",
+      "enum": ["hospital", "trauma_centre", "police", "ambulance_station", "towing", "puncture_shop", "fire_station", "pharmacy"]
+    },
+    "name": { "type": "string" },
+    "phone": { "type": ["string", "null"] },
+    "address": { "type": ["string", "null"] },
+    "last_updated": { "type": "integer", "description": "Unix epoch seconds" },
+    "data_source": { "type": "string", "enum": ["osm", "manual", "government"] }
+  }
+}
