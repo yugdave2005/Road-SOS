@@ -30,7 +30,16 @@ export default function DownloadZoneScreen() {
     await SyncManager.setHomeLocation(parsedLat, parsedLon);
     setCurrentHome({ lat: parsedLat, lon: parsedLon });
     setIsSaving(false);
-    Alert.alert('Home Zone Saved', `Home location set to ${parsedLat.toFixed(4)}, ${parsedLon.toFixed(4)}.\nPOIs within 50km will sync in the background.`);
+    
+    Alert.alert(
+      'Home Zone Saved', 
+      `Home location set to ${parsedLat.toFixed(4)}, ${parsedLon.toFixed(4)}.\nPOIs within 50km will now sync in the background.`
+    );
+    
+    // Trigger immediate sync
+    SyncManager.performSync().catch(err => {
+      // Background sync failures are handled internally, but we catch here just in case
+    });
   };
 
   return (
