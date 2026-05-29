@@ -9,8 +9,22 @@
       }
     },
     "owner": "yug_125",
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow RoadSOS to use your location for SOS services."
+        }
+      ]
+    ],
     "android": {
-      "package": "com.yug_125.roadsos"
+      "package": "com.yug_125.roadsos",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "RECORD_AUDIO",
+        "CALL_PHONE"
+      ]
     }
   }
 }
