@@ -2,14 +2,14 @@ import { PoiRepository } from '@core/db/PoiRepository';
 import { Logger } from '@core/utils/Logger';
 
 /* eslint-disable @typescript-eslint/no-var-requires */
-const hospitalData = require('../../../assets/data/hospital.geojson');
-const traumaCentreData = require('../../../assets/data/trauma_centre.geojson');
-const policeData = require('../../../assets/data/police.geojson');
-const ambulanceStationData = require('../../../assets/data/ambulance_station.geojson');
-const towingData = require('../../../assets/data/towing.geojson');
-const punctureShopData = require('../../../assets/data/puncture_shop.geojson');
-const fireStationData = require('../../../assets/data/fire_station.geojson');
-const pharmacyData = require('../../../assets/data/pharmacy.geojson');
+const hospitalData = require('../../../assets/data/hospital.json');
+const traumaCentreData = require('../../../assets/data/trauma_centre.json');
+const policeData = require('../../../assets/data/police.json');
+const ambulanceStationData = require('../../../assets/data/ambulance_station.json');
+const towingData = require('../../../assets/data/towing.json');
+const punctureShopData = require('../../../assets/data/puncture_shop.json');
+const fireStationData = require('../../../assets/data/fire_station.json');
+const pharmacyData = require('../../../assets/data/pharmacy.json');
 /* eslint-enable @typescript-eslint/no-var-requires */
 
 interface GeoJsonFeature {
