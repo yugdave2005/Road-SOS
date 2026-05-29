@@ -1,21 +1,47 @@
-import React from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, Linking, Platform } from 'react-native';
+import React, { useMemo, useEffect } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Linking, Platform } from 'react-native';
 import { SosButton } from './SosButton';
 import { useSos, PoiResult } from './useSos';
 import { useLocation } from '@shared/hooks/useLocation';
 import { theme } from '@shared/theme/theme';
+import BottomSheet, { BottomSheetFlatList } from '@gorhom/bottom-sheet';
+import MapView, { Marker } from 'react-native-maps';
+import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withTiming, withSequence } from 'react-native-reanimated';
+
+function PulsingDot({ color }: { color: string }) {
+  const opacity = useSharedValue(0.3);
+  useEffect(() => {
+    opacity.value = withRepeat(
+      withSequence(
+        withTiming(1, { duration: 800 }),
+        withTiming(0.3, { duration: 800 })
+      ),
+      -1,
+      true
+    );
+  }, []);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    opacity: opacity.value,
+  }));
+
+  return (
+    <Animated.View style={[styles.dot, { backgroundColor: color }, animatedStyle]} />
+  );
+}
 
 export function SosScreen() {
   const { location, errorMsg: locationError } = useLocation();
   const { activateSos, results, contactedFacilities, isSearching, searchRadius, errorMsg: sosError } = useSos(location);
 
+  const snapPoints = useMemo(() => ['15%', '40%'], []);
+
   const openMap = (lat: number, lon: number, name: string) => {
     const scheme = Platform.select({ ios: 'maps:0,0?q=', android: 'geo:0,0?q=' });
     const latLng = `${lat},${lon}`;
-    const label = name;
     const url = Platform.select({
-      ios: `${scheme}${label}@${latLng}`,
-      android: `${scheme}${latLng}(${label})`
+      ios: `${scheme}${name}@${latLng}`,
+      android: `${scheme}${latLng}(${name})`
     });
     if (url) Linking.openURL(url);
   };
@@ -23,7 +49,7 @@ export function SosScreen() {
   const renderItem = ({ item }: { item: PoiResult }) => (
     <View style={styles.card}>
       <View style={styles.cardHeader}>
-        <Text style={styles.poiName}>{item.poi.name}</Text>
+        <Text style={styles.poiName} numberOfLines={1}>{item.poi.name}</Text>
         <View style={styles.badge}>
           <Text style={styles.badgeText}>{item.poi.category.toUpperCase()}</Text>
         </View>
@@ -43,7 +69,7 @@ export function SosScreen() {
           style={[styles.actionButton, styles.navButton]}
           onPress={() => openMap(item.poi.lat, item.poi.lon, item.poi.name)}
         >
-          <Text style={styles.actionText}>Navigate</Text>
+          <Text style={styles.actionText}>Nav</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -53,14 +79,39 @@ export function SosScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>ROADSOS</Text>
-        {locationError || sosError ? (
-          <Text style={styles.errorText}>{locationError || sosError}</Text>
-        ) : location ? (
-          <Text style={styles.locationText}>Location Active (±{Math.round(location.accuracy)}m)</Text>
-        ) : (
-          <Text style={styles.locationText}>Acquiring GPS...</Text>
-        )}
+        
+        <View style={styles.gpsRow}>
+          <PulsingDot color={locationError || sosError ? theme.colors.sosRed : location ? theme.colors.ambulanceGreen : theme.colors.towingOrange} />
+          <Text style={styles.locationText}>
+            {locationError || sosError 
+              ? (locationError || sosError) 
+              : location 
+                ? `Location Active (±${Math.round(location.accuracy)}m)` 
+                : 'Acquiring GPS...'}
+          </Text>
+        </View>
       </View>
+
+      {location && (
+        <View style={styles.miniMapContainer}>
+          <MapView
+            style={styles.miniMap}
+            initialRegion={{
+              latitude: location.lat,
+              longitude: location.lon,
+              latitudeDelta: 0.02,
+              longitudeDelta: 0.02,
+            }}
+            scrollEnabled={false}
+            zoomEnabled={false}
+            pitchEnabled={false}
+            rotateEnabled={false}
+            mapType="standard"
+          >
+            <Marker coordinate={{ latitude: location.lat, longitude: location.lon }} />
+          </MapView>
+        </View>
+      )}
 
       <View style={styles.buttonContainer}>
         <SosButton 
@@ -70,19 +121,26 @@ export function SosScreen() {
         />
       </View>
 
-      <View style={styles.resultsContainer}>
-        {results.length > 0 && (
+      <BottomSheet
+        index={results.length > 0 ? 1 : 0}
+        snapPoints={snapPoints}
+        backgroundStyle={{ backgroundColor: theme.colors.surfaceElevated }}
+        handleIndicatorStyle={{ backgroundColor: theme.colors.text.disabled }}
+      >
+        <View style={styles.resultsHeaderContainer}>
           <Text style={styles.resultsHeader}>
-            Nearest Help ({searchRadius}km radius)
+            {results.length > 0 ? `Nearest Help (${searchRadius}km radius)` : 'No recent searches'}
           </Text>
-        )}
-        <FlatList
+        </View>
+        <BottomSheetFlatList
           data={results}
           keyExtractor={(item) => item.poi.osmId.toString()}
           renderItem={renderItem}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.listContent}
         />
-      </View>
+      </BottomSheet>
 
       {/* Non-dismissable contacted facilities overlay */}
       {contactedFacilities.length > 0 && (
@@ -111,49 +169,72 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingHorizontal: theme.spacing.md,
     alignItems: 'center',
+    zIndex: 10,
   },
   title: {
     ...theme.typography.screenTitle,
     color: theme.colors.text.primary,
-    marginBottom: theme.spacing.xs,
+    marginBottom: theme.spacing.md,
+  },
+  gpsRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: theme.colors.surfaceElevated,
+    paddingHorizontal: theme.spacing.md,
+    paddingVertical: 8,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: theme.colors.border,
+  },
+  dot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    marginRight: 8,
   },
   locationText: {
     ...theme.typography.poiMeta,
     color: theme.colors.text.secondary,
   },
-  errorText: {
-    ...theme.typography.poiMeta,
-    color: theme.colors.sosRed,
+  miniMapContainer: {
+    alignItems: 'center',
+    marginTop: theme.spacing.lg,
+  },
+  miniMap: {
+    width: 280,
+    height: 200,
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: theme.colors.border,
   },
   buttonContainer: {
     alignItems: 'center',
-    marginVertical: theme.spacing.xl,
+    marginTop: theme.spacing.xl,
   },
-  resultsContainer: {
-    flex: 1,
+  resultsHeaderContainer: {
+    paddingHorizontal: theme.spacing.md,
+    marginBottom: theme.spacing.sm,
   },
   resultsHeader: {
     ...theme.typography.poiMeta,
     color: theme.colors.text.secondary,
-    paddingHorizontal: theme.spacing.md,
-    marginBottom: theme.spacing.sm,
   },
   listContent: {
     paddingHorizontal: theme.spacing.md,
-    paddingBottom: theme.spacing.xl,
+    gap: theme.spacing.md,
   },
   card: {
-    backgroundColor: theme.colors.surfaceElevated,
+    backgroundColor: theme.colors.surface,
     borderRadius: theme.radius.md,
     padding: theme.spacing.md,
-    marginBottom: theme.spacing.md,
+    width: 260,
     borderColor: theme.colors.border,
     borderWidth: 1,
   },
   cardHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     marginBottom: theme.spacing.xs,
   },
   poiName: {
@@ -163,15 +244,16 @@ const styles = StyleSheet.create({
     marginRight: theme.spacing.sm,
   },
   badge: {
-    backgroundColor: theme.colors.surface,
-    paddingHorizontal: theme.spacing.sm,
-    paddingVertical: theme.spacing.xs,
-    borderRadius: theme.radius.full,
-    borderColor: theme.colors.border,
+    backgroundColor: theme.colors.background,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
     borderWidth: 1,
+    borderColor: theme.colors.border,
   },
   badgeText: {
-    ...theme.typography.badge,
+    fontSize: 10,
+    fontWeight: '700',
     color: theme.colors.text.secondary,
   },
   poiMeta: {
@@ -181,16 +263,16 @@ const styles = StyleSheet.create({
   },
   actions: {
     flexDirection: 'row',
-    gap: theme.spacing.md,
+    gap: theme.spacing.sm,
   },
   actionButton: {
     flex: 1,
-    backgroundColor: theme.colors.surface,
+    backgroundColor: theme.colors.background,
     paddingVertical: theme.spacing.sm,
     borderRadius: theme.radius.sm,
     alignItems: 'center',
-    borderColor: theme.colors.border,
     borderWidth: 1,
+    borderColor: theme.colors.border,
   },
   navButton: {
     backgroundColor: theme.colors.policeBlue,
@@ -199,13 +281,14 @@ const styles = StyleSheet.create({
   actionText: {
     color: theme.colors.text.primary,
     fontWeight: '600',
+    fontSize: 13,
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0, 0, 0, 0.9)',
+    backgroundColor: 'rgba(0, 0, 0, 0.95)',
     justifyContent: 'center',
     padding: theme.spacing.xl,
-    zIndex: 1000,
+    zIndex: 9999,
   },
   overlayTitle: {
     fontSize: 24,
@@ -247,4 +330,5 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   }
 });
+
 

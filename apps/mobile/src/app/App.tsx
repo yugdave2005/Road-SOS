@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { RealmProvider } from '@realm/react';
@@ -11,6 +12,7 @@ import { PoiDataLoader } from '../core/data/PoiDataLoader';
 import { useRealm } from '@realm/react';
 import { VoiceActivation } from '../core/ai/VoiceActivation';
 import { Logger } from '../core/utils/Logger';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 function SyncInitializer({ children }: { children: React.ReactNode }) {
   const realm = useRealm();
@@ -47,13 +49,15 @@ function SyncInitializer({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <RealmProvider {...realmConfig}>
-      <SyncInitializer>
-        <NavigationContainer>
-          <OfflineBanner />
-          <RootNavigator />
-        </NavigationContainer>
-      </SyncInitializer>
-    </RealmProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <RealmProvider {...realmConfig}>
+        <SyncInitializer>
+          <NavigationContainer>
+            <OfflineBanner />
+            <RootNavigator />
+          </NavigationContainer>
+        </SyncInitializer>
+      </RealmProvider>
+    </GestureHandlerRootView>
   );
 }
