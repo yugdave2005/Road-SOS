@@ -43,25 +43,9 @@ Built with React Native (Expo SDK 56) and optimized for low-resource environment
 
 The core philosophy of RoadSOS is **"Zero network calls in the hot path"**. All critical emergency queries hit a local Realm Database first.
 
-```mermaid
-graph TD
-    A[User Opens App] --> B{GPS Available?}
-    B -->|Yes| C[Fetch Lat/Lon]
-    B -->|No| D[Use Cached 'Home' Location]
-    
-    C --> E{Trigger SOS}
-    D --> E
-    
-    E --> F[Query Local Realm DB]
-    F --> G[Find Nearest Services]
-    
-    G --> H[Display 5-Sec Dialer]
-    G --> I[Auto-Dial 112 / 911]
-    
-    style A fill:#1A1A1A,stroke:#FFF,color:#FFF
-    style E fill:#FF3B30,stroke:#FFF,color:#FFF,stroke-width:2px
-    style F fill:#4CAF50,stroke:#FFF,color:#FFF
-```
+<div align="center">
+  <img src="./docs/flowchart.png" alt="RoadSOS System Architecture Flowchart" width="80%" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);" />
+</div>
 
 ---
 
