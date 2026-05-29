@@ -1,75 +1,58 @@
 import Voice, { SpeechResultsEvent, SpeechErrorEvent } from '@react-native-voice/voice';
 import { Logger } from '../utils/Logger';
-import { LlamaController } from './LlamaController';
-import { CommandParser } from './CommandParser';
-
-const WAKE_WORDS = ['sos', 'emergency', 'help', 'accident', 'injured'];
 
 export class VoiceActivation {
   private static isListening = false;
-  private static onCommandExtractedCallback: ((cmd: any) => void) | null = null;
+  private static onResultCallback: ((transcript: string) => void) | null = null;
+  private static onErrorCallback: ((error: string) => void) | null = null;
 
-  static async initialise(onCommandCallback?: (cmd: any) => void): Promise<void> {
-    if (onCommandCallback) {
-      this.onCommandExtractedCallback = onCommandCallback;
-    }
-
+  static async initialise(): Promise<void> {
     Voice.onSpeechResults = this.onSpeechResults.bind(this);
-    Voice.onSpeechError = (e: SpeechErrorEvent) => Logger.error('[VoiceActivation] Speech error:', e);
-    
-    await LlamaController.initialise();
+    Voice.onSpeechError = (e: SpeechErrorEvent) => {
+      Logger.error('[VoiceActivation] Speech error:', e);
+      if (this.onErrorCallback) {
+        this.onErrorCallback(e.error?.message || 'Unknown speech error');
+      }
+      this.isListening = false;
+    };
   }
 
-  static async startListening(): Promise<void> {
+  static async startRecording(onResult: (t: string) => void, onError?: (e: string) => void): Promise<void> {
     if (this.isListening) return;
+    this.onResultCallback = onResult;
+    if (onError) this.onErrorCallback = onError;
+    
     try {
       await Voice.start('en-US');
       this.isListening = true;
-      Logger.info('[VoiceActivation] Started listening for wake words...');
+      Logger.info('[VoiceActivation] Started recording...');
     } catch (e) {
-      Logger.error('[VoiceActivation] Failed to start listening', e);
+      Logger.error('[VoiceActivation] Failed to start recording', e);
+      if (this.onErrorCallback) this.onErrorCallback('Failed to start recording');
     }
   }
 
-  static async stopListening(): Promise<void> {
+  static async stopRecording(): Promise<void> {
     if (!this.isListening) return;
     try {
       await Voice.stop();
       this.isListening = false;
-      Logger.info('[VoiceActivation] Stopped listening.');
+      Logger.info('[VoiceActivation] Stopped recording.');
     } catch (e) {
-      Logger.error('[VoiceActivation] Failed to stop listening', e);
+      Logger.error('[VoiceActivation] Failed to stop recording', e);
     }
   }
 
-  private static async onSpeechResults(e: SpeechResultsEvent) {
-    const transcript = e.value?.[0]?.toLowerCase() ?? '';
+  private static onSpeechResults(e: SpeechResultsEvent) {
+    const transcript = e.value?.[0] ?? '';
     Logger.info(`[VoiceActivation] Transcript: "${transcript}"`);
 
-    const isWake = WAKE_WORDS.some(w => transcript.includes(w));
+    if (this.onResultCallback && transcript.trim().length > 0) {
+      this.onResultCallback(transcript);
+    }
     
-    if (isWake) {
-      Logger.info('[VoiceActivation] Wake word detected!');
-      await this.onWakeWordDetected(transcript);
-    }
-  }
-
-  private static async onWakeWordDetected(transcript: string) {
-    try {
-      // 1. Pass to local LLM for intent extraction
-      const llmOutput = await LlamaController.infer(transcript);
-      
-      // 2. Parse the JSON
-      const command = CommandParser.parse(llmOutput);
-      
-      if (command) {
-        CommandParser.executeCommand(command);
-        if (this.onCommandExtractedCallback) {
-          this.onCommandExtractedCallback(command);
-        }
-      }
-    } catch (e) {
-      Logger.error('[VoiceActivation] Error processing wake word intent', e);
-    }
+    // Auto stop after result
+    this.stopRecording();
   }
 }
+

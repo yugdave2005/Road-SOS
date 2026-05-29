@@ -5,6 +5,7 @@ import { SosScreen } from '../../features/sos/SosScreen';
 import MapScreen from '../../features/map/MapScreen';
 import SettingsScreen from '../../features/settings/SettingsScreen';
 import DownloadZoneScreen from '../../features/settings/DownloadZoneScreen';
+import AIHelpScreen from '../../features/ai/AIHelpScreen';
 import { theme } from '@shared/theme/theme';
 
 const Tab = createBottomTabNavigator();
@@ -57,6 +58,11 @@ export function RootNavigator() {
         options={{ tabBarLabel: 'Offline Map' }} 
       />
       <Tab.Screen 
+        name="AI Help" 
+        component={AIHelpScreen} 
+        options={{ tabBarLabel: 'AI Help' }} 
+      />
+      <Tab.Screen 
         name="Settings" 
         component={SettingsStack} 
         options={{ tabBarLabel: 'Settings' }} 
@@ -64,3 +70,4 @@ export function RootNavigator() {
     </Tab.Navigator>
   );
 }
+

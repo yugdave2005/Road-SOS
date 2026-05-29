@@ -1,5 +1,5 @@
-import React, { useMemo, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Linking, Platform } from 'react-native';
+import React, { useMemo, useEffect, useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, Linking, Platform, Alert, ActivityIndicator } from 'react-native';
 import { SosButton } from './SosButton';
 import { useSos, PoiResult } from './useSos';
 import { useLocation } from '@shared/hooks/useLocation';
@@ -7,6 +7,9 @@ import { theme } from '@shared/theme/theme';
 import BottomSheet, { BottomSheetFlatList } from '@gorhom/bottom-sheet';
 import MapView, { Marker } from 'react-native-maps';
 import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withTiming, withSequence } from 'react-native-reanimated';
+import { VoiceActivation } from '@core/ai/VoiceActivation';
+import { GroqClient } from '@core/ai/GroqClient';
+import { SmsFallback } from '@core/ai/SmsFallback';
 
 function PulsingDot({ color }: { color: string }) {
   const opacity = useSharedValue(0.3);
@@ -30,11 +33,50 @@ function PulsingDot({ color }: { color: string }) {
   );
 }
 
-export function SosScreen() {
+export function SosScreen({ navigation }: any) {
   const { location, errorMsg: locationError } = useLocation();
   const { activateSos, results, contactedFacilities, isSearching, searchRadius, errorMsg: sosError } = useSos(location);
+  const [isRecording, setIsRecording] = useState(false);
+  const [aiProcessing, setAiProcessing] = useState(false);
 
   const snapPoints = useMemo(() => ['15%', '40%'], []);
+
+  useEffect(() => {
+    VoiceActivation.initialise();
+  }, []);
+
+  const handleVoiceResult = async (transcript: string) => {
+    setAiProcessing(true);
+    try {
+      const response = await GroqClient.ask(transcript);
+      Alert.alert('AI Advice', response, [
+        { text: 'OK' },
+        { text: 'Chat More', onPress: () => navigation.navigate('AI Help') }
+      ]);
+    } catch (err: any) {
+      Alert.alert('AI Error', err.message || 'Failed to get AI advice.', [
+        { text: 'SMS Fallback', onPress: () => SmsFallback.triggerSmsFallback(transcript, location) },
+        { text: 'Cancel', style: 'cancel' }
+      ]);
+    } finally {
+      setAiProcessing(false);
+    }
+  };
+
+  const handleVoiceError = (err: string) => {
+    setIsRecording(false);
+    Alert.alert('Voice Error', err);
+  };
+
+  const startVoice = () => {
+    setIsRecording(true);
+    VoiceActivation.startRecording(handleVoiceResult, handleVoiceError);
+  };
+
+  const stopVoice = () => {
+    setIsRecording(false);
+    VoiceActivation.stopRecording();
+  };
 
   const openMap = (lat: number, lon: number, name: string) => {
     const scheme = Platform.select({ ios: 'maps:0,0?q=', android: 'geo:0,0?q=' });
@@ -120,6 +162,19 @@ export function SosScreen() {
           gpsUnavailable={!location && !!locationError} 
         />
       </View>
+
+      <TouchableOpacity 
+        style={[styles.floatingVoiceBtn, isRecording && styles.floatingVoiceBtnActive]}
+        onPressIn={startVoice}
+        onPressOut={stopVoice}
+        disabled={aiProcessing}
+      >
+        {aiProcessing ? (
+          <ActivityIndicator color="#000" />
+        ) : (
+          <Text style={styles.floatingVoiceText}>{isRecording ? 'Listening...' : 'Hold for AI'}</Text>
+        )}
+      </TouchableOpacity>
 
       <BottomSheet
         index={results.length > 0 ? 1 : 0}
@@ -328,6 +383,30 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: theme.spacing.xl,
     fontWeight: '600',
+  },
+  floatingVoiceBtn: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    borderRadius: 30,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    zIndex: 100,
+    borderColor: theme.colors.border,
+    borderWidth: 1,
+  },
+  floatingVoiceBtnActive: {
+    backgroundColor: theme.colors.policeBlue,
+  },
+  floatingVoiceText: {
+    color: '#000',
+    fontWeight: '700',
   }
 });
 
