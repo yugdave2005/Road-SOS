@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { theme } from '@shared/theme/theme';
 
 interface SettingsScreenProps {
@@ -8,7 +8,7 @@ interface SettingsScreenProps {
 
 export default function SettingsScreen({ navigation }: SettingsScreenProps) {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <Text style={styles.title}>Settings</Text>
 
       <TouchableOpacity
@@ -37,7 +37,7 @@ export default function SettingsScreen({ navigation }: SettingsScreenProps) {
           Map data © OpenStreetMap contributors
         </Text>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -45,6 +45,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: theme.colors.background,
+  },
+  contentContainer: {
+    flexGrow: 1,
     paddingTop: 60,
     paddingHorizontal: theme.spacing.md,
   },
@@ -71,7 +74,8 @@ const styles = StyleSheet.create({
     color: theme.colors.text.secondary,
   },
   attribution: {
-    marginTop: 'auto' as any,
+    marginTop: 'auto',
+    paddingTop: theme.spacing.xl,
     paddingBottom: theme.spacing.xl,
     alignItems: 'center',
   },
