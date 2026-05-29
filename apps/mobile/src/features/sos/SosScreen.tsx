@@ -6,8 +6,8 @@ import { useLocation } from '@shared/hooks/useLocation';
 import { theme } from '@shared/theme/theme';
 
 export function SosScreen() {
-  const { location, errorMsg } = useLocation();
-  const { triggerSos, results, isSearching, searchRadius } = useSos(location);
+  const { location, errorMsg: locationError } = useLocation();
+  const { activateSos, results, contactedFacilities, isSearching, searchRadius, errorMsg: sosError } = useSos(location);
 
   const openMap = (lat: number, lon: number, name: string) => {
     const scheme = Platform.select({ ios: 'maps:0,0?q=', android: 'geo:0,0?q=' });
@@ -53,8 +53,8 @@ export function SosScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>ROADSOS</Text>
-        {errorMsg ? (
-          <Text style={styles.errorText}>{errorMsg}</Text>
+        {locationError || sosError ? (
+          <Text style={styles.errorText}>{locationError || sosError}</Text>
         ) : location ? (
           <Text style={styles.locationText}>Location Active (±{Math.round(location.accuracy)}m)</Text>
         ) : (
@@ -63,7 +63,11 @@ export function SosScreen() {
       </View>
 
       <View style={styles.buttonContainer}>
-        <SosButton onPress={triggerSos} disabled={isSearching || !location} />
+        <SosButton 
+          onActivate={activateSos} 
+          disabled={isSearching} 
+          gpsUnavailable={!location && !!locationError} 
+        />
       </View>
 
       <View style={styles.resultsContainer}>
@@ -79,6 +83,21 @@ export function SosScreen() {
           contentContainerStyle={styles.listContent}
         />
       </View>
+
+      {/* Non-dismissable contacted facilities overlay */}
+      {contactedFacilities.length > 0 && (
+        <View style={styles.overlay}>
+          <Text style={styles.overlayTitle}>EMERGENCY CONTACTED</Text>
+          {contactedFacilities.map(cf => (
+            <View key={cf.poi.osmId} style={styles.contactedCard}>
+              <Text style={styles.contactedName}>{cf.poi.name}</Text>
+              <Text style={styles.contactedType}>{cf.poi.category.toUpperCase()} - {cf.distanceKm.toFixed(1)}km</Text>
+              <Text style={styles.contactedPhone}>{cf.poi.phone || 'No phone'}</Text>
+            </View>
+          ))}
+          <Text style={styles.overlayFooter}>Help is on the way. Stay calm.</Text>
+        </View>
+      )}
     </View>
   );
 }
@@ -180,5 +199,52 @@ const styles = StyleSheet.create({
   actionText: {
     color: theme.colors.text.primary,
     fontWeight: '600',
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.9)',
+    justifyContent: 'center',
+    padding: theme.spacing.xl,
+    zIndex: 1000,
+  },
+  overlayTitle: {
+    fontSize: 24,
+    fontWeight: '800',
+    color: theme.colors.sosRed,
+    textAlign: 'center',
+    marginBottom: theme.spacing.xl,
+    letterSpacing: 1,
+  },
+  contactedCard: {
+    backgroundColor: '#222',
+    padding: theme.spacing.md,
+    borderRadius: theme.radius.md,
+    marginBottom: theme.spacing.md,
+    borderLeftWidth: 4,
+    borderLeftColor: theme.colors.sosRed,
+  },
+  contactedName: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#FFF',
+    marginBottom: 4,
+  },
+  contactedType: {
+    fontSize: 14,
+    color: '#CCC',
+    marginBottom: 4,
+  },
+  contactedPhone: {
+    fontSize: 16,
+    color: '#66B2FF',
+    fontWeight: '600',
+  },
+  overlayFooter: {
+    fontSize: 16,
+    color: '#FFF',
+    textAlign: 'center',
+    marginTop: theme.spacing.xl,
+    fontWeight: '600',
   }
 });
+
