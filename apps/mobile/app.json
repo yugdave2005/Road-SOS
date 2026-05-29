@@ -1,7 +1,16 @@
 {
   "expo": {
     "name": "mobile",
-    "slug": "mobile",
-    "version": "1.0.0"
+    "slug": "road-sos",
+    "version": "1.0.0",
+    "extra": {
+      "eas": {
+        "projectId": "0695436e-5b17-4a01-b759-3521363ad571"
+      }
+    },
+    "owner": "yug_125",
+    "android": {
+      "package": "com.yug_125.roadsos"
+    }
   }
 }

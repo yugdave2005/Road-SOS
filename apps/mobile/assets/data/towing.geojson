@@ -1,0 +1,230 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.2167, 28.6353] },
+      "properties": {
+        "osm_id": 500001,
+        "name": "Delhi Towing & Recovery Services",
+        "category": "towing",
+        "phone": "+91-11-27861555",
+        "address": "Rajghat Power House Rd, New Delhi",
+        "city": "New Delhi",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [72.8411, 19.0144] },
+      "properties": {
+        "osm_id": 500002,
+        "name": "Mumbai Road Assistance Towing",
+        "category": "towing",
+        "phone": "+91-22-26512020",
+        "address": "Dadar TT Circle, Dadar, Mumbai",
+        "city": "Mumbai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [80.2209, 13.0400] },
+      "properties": {
+        "osm_id": 500003,
+        "name": "Chennai Auto Recovery",
+        "category": "towing",
+        "phone": "+91-44-24333444",
+        "address": "Anna Salai, Guindy, Chennai",
+        "city": "Chennai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-73.9712, 40.7533] },
+      "properties": {
+        "osm_id": 500004,
+        "name": "All Borough Towing",
+        "category": "towing",
+        "phone": "+1-212-683-8600",
+        "address": "680 2nd Ave, New York, NY 10016",
+        "city": "New York",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.6845, 41.8967] },
+      "properties": {
+        "osm_id": 500005,
+        "name": "Lincoln Towing Service",
+        "category": "towing",
+        "phone": "+1-773-549-5100",
+        "address": "4882 N Clark St, Chicago, IL 60640",
+        "city": "Chicago",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.0955, 51.5065] },
+      "properties": {
+        "osm_id": 500006,
+        "name": "AA Recovery London Bridge",
+        "category": "towing",
+        "phone": "+44-800-0287282",
+        "address": "Tooley St, London Bridge, London SE1 2QF",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-1.8571, 52.4706] },
+      "properties": {
+        "osm_id": 500007,
+        "name": "RAC Recovery Birmingham",
+        "category": "towing",
+        "phone": "+44-330-1596783",
+        "address": "Digbeth, Birmingham B5 6BS",
+        "city": "Birmingham",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [3.3700, 6.5000] },
+      "properties": {
+        "osm_id": 500008,
+        "name": "Lagos Vehicle Recovery",
+        "category": "towing",
+        "phone": "+234-1-4523680",
+        "address": "Herbert Macaulay Way, Yaba, Lagos",
+        "city": "Lagos",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [7.4700, 9.0400] },
+      "properties": {
+        "osm_id": 500009,
+        "name": "Abuja Roadside Recovery",
+        "category": "towing",
+        "phone": "+234-9-8731245",
+        "address": "Nnamdi Azikiwe Expressway, Abuja",
+        "city": "Abuja",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.1896, -22.9200] },
+      "properties": {
+        "osm_id": 500010,
+        "name": "Auto Socorro Copacabana",
+        "category": "towing",
+        "phone": "+55-21-25413600",
+        "address": "R. Barata Ribeiro, 502, Copacabana, Rio de Janeiro",
+        "city": "Rio de Janeiro",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6500, -23.5500] },
+      "properties": {
+        "osm_id": 500011,
+        "name": "Auto Guincho Paulista",
+        "category": "towing",
+        "phone": "+55-11-31065500",
+        "address": "R. Augusta, 1200, São Paulo",
+        "city": "São Paulo",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-118.3000, 34.0700] },
+      "properties": {
+        "osm_id": 500012,
+        "name": "West LA Towing",
+        "category": "towing",
+        "phone": "+1-310-477-2228",
+        "address": "1801 S La Cienega Blvd, Los Angeles, CA 90035",
+        "city": "Los Angeles",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [75.8100, 26.9200] },
+      "properties": {
+        "osm_id": 500013,
+        "name": "Jaipur Highway Rescue Towing",
+        "category": "towing",
+        "phone": "+91-141-4025555",
+        "address": "Tonk Road, Jaipur",
+        "city": "Jaipur",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1580, 51.5230] },
+      "properties": {
+        "osm_id": 500014,
+        "name": "Green Flag Recovery Marylebone",
+        "category": "towing",
+        "phone": "+44-800-0519003",
+        "address": "Marylebone Rd, London NW1 5BE",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.9400, -19.9350] },
+      "properties": {
+        "osm_id": 500015,
+        "name": "Auto Guincho BH Express",
+        "category": "towing",
+        "phone": "+55-31-32921500",
+        "address": "Av. Amazonas, 1000, Belo Horizonte",
+        "city": "Belo Horizonte",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    }
+  ]
+}

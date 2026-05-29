@@ -1,0 +1,230 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.2295, 28.6125] },
+      "properties": {
+        "osm_id": 400001,
+        "name": "CATS Ambulance Station Connaught Place",
+        "category": "ambulance_station",
+        "phone": "+91-11-25678901",
+        "address": "Barakhamba Rd, Connaught Place, New Delhi",
+        "city": "New Delhi",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [72.8700, 19.0760] },
+      "properties": {
+        "osm_id": 400002,
+        "name": "BYL Nair Ambulance Bay",
+        "category": "ambulance_station",
+        "phone": "+91-22-23027601",
+        "address": "Dr. A.L. Nair Rd, Mumbai Central, Mumbai",
+        "city": "Mumbai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [80.2437, 13.0604] },
+      "properties": {
+        "osm_id": 400003,
+        "name": "108 Ambulance Station Nungambakkam",
+        "category": "ambulance_station",
+        "phone": "+91-44-28200108",
+        "address": "Nungambakkam High Rd, Chennai",
+        "city": "Chennai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-73.9949, 40.7505] },
+      "properties": {
+        "osm_id": 400004,
+        "name": "FDNY EMS Station 1",
+        "category": "ambulance_station",
+        "phone": "+1-212-999-2770",
+        "address": "420 W 33rd St, New York, NY 10001",
+        "city": "New York",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.6516, 41.8739] },
+      "properties": {
+        "osm_id": 400005,
+        "name": "Chicago Fire Dept Ambulance 18",
+        "category": "ambulance_station",
+        "phone": "+1-312-742-5400",
+        "address": "1244 W Chicago Ave, Chicago, IL 60642",
+        "city": "Chicago",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1198, 51.5013] },
+      "properties": {
+        "osm_id": 400006,
+        "name": "London Ambulance Station Waterloo",
+        "category": "ambulance_station",
+        "phone": "+44-20-79218999",
+        "address": "8 Waterloo Pl, London SW1Y 4BE",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-1.9030, 52.4791] },
+      "properties": {
+        "osm_id": 400007,
+        "name": "West Midlands Ambulance Station Steelhouse",
+        "category": "ambulance_station",
+        "phone": "+44-121-2627777",
+        "address": "Steelhouse Lane, Birmingham B4 6NH",
+        "city": "Birmingham",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [3.4206, 6.4281] },
+      "properties": {
+        "osm_id": 400008,
+        "name": "LASEMA Ambulance Station Lekki",
+        "category": "ambulance_station",
+        "phone": "+234-1-7905533",
+        "address": "Lekki-Epe Expressway, Lekki, Lagos",
+        "city": "Lagos",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [7.5120, 9.0580] },
+      "properties": {
+        "osm_id": 400009,
+        "name": "NEMA Ambulance Point Wuse",
+        "category": "ambulance_station",
+        "phone": "+234-9-2347650",
+        "address": "Wuse Zone 5, Abuja",
+        "city": "Abuja",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.1725, -22.9110] },
+      "properties": {
+        "osm_id": 400010,
+        "name": "SAMU Base Copacabana",
+        "category": "ambulance_station",
+        "phone": "+55-21-192",
+        "address": "R. Siqueira Campos, 125, Copacabana, Rio de Janeiro",
+        "city": "Rio de Janeiro",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6565, -23.5630] },
+      "properties": {
+        "osm_id": 400011,
+        "name": "SAMU Base Pinheiros",
+        "category": "ambulance_station",
+        "phone": "+55-11-192",
+        "address": "R. Cardeal Arcoverde, 900, Pinheiros, São Paulo",
+        "city": "São Paulo",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-118.2580, 34.0535] },
+      "properties": {
+        "osm_id": 400012,
+        "name": "LAFD Station 9 EMS",
+        "category": "ambulance_station",
+        "phone": "+1-213-485-6209",
+        "address": "430 E 7th St, Los Angeles, CA 90014",
+        "city": "Los Angeles",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [75.8017, 26.9124] },
+      "properties": {
+        "osm_id": 400013,
+        "name": "108 Ambulance Station Jaipur",
+        "category": "ambulance_station",
+        "phone": "+91-141-108",
+        "address": "Sawai Man Singh Rd, Jaipur",
+        "city": "Jaipur",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1410, 51.4965] },
+      "properties": {
+        "osm_id": 400014,
+        "name": "London Ambulance Station Chelsea",
+        "category": "ambulance_station",
+        "phone": "+44-20-77836500",
+        "address": "Britten St, Chelsea, London SW3 3TZ",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.9435, -19.9320] },
+      "properties": {
+        "osm_id": 400015,
+        "name": "SAMU Base Belo Horizonte Central",
+        "category": "ambulance_station",
+        "phone": "+55-31-192",
+        "address": "Av. Afonso Pena, 1500, Belo Horizonte",
+        "city": "Belo Horizonte",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    }
+  ]
+}

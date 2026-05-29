@@ -7,6 +7,7 @@ import { ConnectivityMonitor } from '../core/network/ConnectivityMonitor';
 import { OfflineBanner } from '../shared/components/OfflineBanner';
 import { SyncManager } from '../core/db/SyncManager';
 import { PoiRepository } from '../core/db/PoiRepository';
+import { PoiDataLoader } from '../core/data/PoiDataLoader';
 import { useRealm } from '@realm/react';
 import { VoiceActivation } from '../core/ai/VoiceActivation';
 import { Logger } from '../core/utils/Logger';
@@ -21,6 +22,10 @@ function SyncInitializer({ children }: { children: React.ReactNode }) {
       ConnectivityMonitor.start();
       
       const repo = new PoiRepository(realm);
+      
+      // Seed bundled POI data on first launch (before sync)
+      await PoiDataLoader.seedIfEmpty(repo);
+      
       await SyncManager.initialise(repo);
       
       await VoiceActivation.initialise();

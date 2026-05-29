@@ -1,0 +1,230 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.2150, 28.6320] },
+      "properties": {
+        "osm_id": 800001,
+        "name": "Apollo Pharmacy Connaught Place",
+        "category": "pharmacy",
+        "phone": "+91-11-23360555",
+        "address": "F-14, Connaught Place, New Delhi",
+        "city": "New Delhi",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [72.8310, 19.0060] },
+      "properties": {
+        "osm_id": 800002,
+        "name": "MedPlus Pharmacy Bandra",
+        "category": "pharmacy",
+        "phone": "+91-22-26420123",
+        "address": "Hill Rd, Bandra West, Mumbai",
+        "city": "Mumbai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [80.2400, 13.0600] },
+      "properties": {
+        "osm_id": 800003,
+        "name": "Netmeds Pharmacy T Nagar",
+        "category": "pharmacy",
+        "phone": "+91-44-24340123",
+        "address": "Usman Rd, T Nagar, Chennai",
+        "city": "Chennai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-73.9860, 40.7484] },
+      "properties": {
+        "osm_id": 800004,
+        "name": "CVS Pharmacy Times Square",
+        "category": "pharmacy",
+        "phone": "+1-212-695-0037",
+        "address": "217 W 34th St, New York, NY 10001",
+        "city": "New York",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.6280, 41.8820] },
+      "properties": {
+        "osm_id": 800005,
+        "name": "Walgreens Pharmacy State Street",
+        "category": "pharmacy",
+        "phone": "+1-312-587-1416",
+        "address": "757 N State St, Chicago, IL 60610",
+        "city": "Chicago",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1400, 51.5010] },
+      "properties": {
+        "osm_id": 800006,
+        "name": "Boots Pharmacy Victoria",
+        "category": "pharmacy",
+        "phone": "+44-20-78341141",
+        "address": "106-108 Victoria St, London SW1E 5JL",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-1.8950, 52.4820] },
+      "properties": {
+        "osm_id": 800007,
+        "name": "Boots Pharmacy New Street",
+        "category": "pharmacy",
+        "phone": "+44-121-6321210",
+        "address": "66 New St, Birmingham B2 4DU",
+        "city": "Birmingham",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [3.3900, 6.4550] },
+      "properties": {
+        "osm_id": 800008,
+        "name": "HealthPlus Pharmacy Victoria Island",
+        "category": "pharmacy",
+        "phone": "+234-1-2715000",
+        "address": "Plot 1669, Oyin Jolayemi St, Victoria Island, Lagos",
+        "city": "Lagos",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [7.4900, 9.0550] },
+      "properties": {
+        "osm_id": 800009,
+        "name": "Alpha Pharmacy Wuse",
+        "category": "pharmacy",
+        "phone": "+234-9-5230145",
+        "address": "Wuse Zone 4, Abuja",
+        "city": "Abuja",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.1780, -22.9070] },
+      "properties": {
+        "osm_id": 800010,
+        "name": "Drogaria Pacheco Copacabana",
+        "category": "pharmacy",
+        "phone": "+55-21-25223500",
+        "address": "Av. Nossa Sra. de Copacabana, 680, Rio de Janeiro",
+        "city": "Rio de Janeiro",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6550, -23.5620] },
+      "properties": {
+        "osm_id": 800011,
+        "name": "Drogasil Paulista",
+        "category": "pharmacy",
+        "phone": "+55-11-31791000",
+        "address": "Av. Paulista, 1800, São Paulo",
+        "city": "São Paulo",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-118.2600, 34.0550] },
+      "properties": {
+        "osm_id": 800012,
+        "name": "Rite Aid Pharmacy Downtown LA",
+        "category": "pharmacy",
+        "phone": "+1-213-624-5800",
+        "address": "300 W 7th St, Los Angeles, CA 90014",
+        "city": "Los Angeles",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [75.7950, 26.9180] },
+      "properties": {
+        "osm_id": 800013,
+        "name": "Jan Aushadhi Pharmacy Jaipur",
+        "category": "pharmacy",
+        "phone": "+91-141-2744567",
+        "address": "Tonk Road, Jaipur",
+        "city": "Jaipur",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1100, 51.5200] },
+      "properties": {
+        "osm_id": 800014,
+        "name": "Superdrug Pharmacy Kings Cross",
+        "category": "pharmacy",
+        "phone": "+44-20-72788889",
+        "address": "140 Kings Cross Rd, London WC1X 9DS",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.9450, -19.9300] },
+      "properties": {
+        "osm_id": 800015,
+        "name": "Drogaria Araújo Centro",
+        "category": "pharmacy",
+        "phone": "+55-31-32741100",
+        "address": "Av. Afonso Pena, 800, Centro, Belo Horizonte",
+        "city": "Belo Horizonte",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    }
+  ]
+}

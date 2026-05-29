@@ -1,4 +1,4 @@
-package com.mobile
+package com.yug_125.roadsos
 
 import android.app.Application
 import android.content.res.Configuration

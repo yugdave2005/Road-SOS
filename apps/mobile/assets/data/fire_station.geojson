@@ -1,0 +1,230 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.2090, 28.6285] },
+      "properties": {
+        "osm_id": 700001,
+        "name": "Delhi Fire Station Connaught Place",
+        "category": "fire_station",
+        "phone": "+91-11-23363223",
+        "address": "Bhai Vir Singh Marg, Connaught Place, New Delhi",
+        "city": "New Delhi",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [72.8350, 18.9500] },
+      "properties": {
+        "osm_id": 700002,
+        "name": "Mumbai Fire Brigade HQ",
+        "category": "fire_station",
+        "phone": "+91-22-23076111",
+        "address": "34 P D'Mello Rd, Carnac Bunder, Mumbai",
+        "city": "Mumbai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [80.2500, 13.0700] },
+      "properties": {
+        "osm_id": 700003,
+        "name": "Chennai Fire Station Egmore",
+        "category": "fire_station",
+        "phone": "+91-44-25380101",
+        "address": "Poonamallee High Rd, Egmore, Chennai",
+        "city": "Chennai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-73.9660, 40.7623] },
+      "properties": {
+        "osm_id": 700004,
+        "name": "FDNY Engine 39",
+        "category": "fire_station",
+        "phone": "+1-212-570-4300",
+        "address": "157 E 67th St, New York, NY 10065",
+        "city": "New York",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.6295, 41.8849] },
+      "properties": {
+        "osm_id": 700005,
+        "name": "Chicago Fire Engine Company 42",
+        "category": "fire_station",
+        "phone": "+1-312-742-6646",
+        "address": "55 W Illinois St, Chicago, IL 60654",
+        "city": "Chicago",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1070, 51.5110] },
+      "properties": {
+        "osm_id": 700006,
+        "name": "London Fire Brigade Dowgate",
+        "category": "fire_station",
+        "phone": "+44-20-85551200",
+        "address": "44 Tooley St, London SE1 2SZ",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-1.9000, 52.4800] },
+      "properties": {
+        "osm_id": 700007,
+        "name": "West Midlands Fire Station Lancaster Circus",
+        "category": "fire_station",
+        "phone": "+44-121-3805000",
+        "address": "Lancaster Circus, Birmingham B4 7DJ",
+        "city": "Birmingham",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [3.3750, 6.4500] },
+      "properties": {
+        "osm_id": 700008,
+        "name": "Federal Fire Service Lagos",
+        "category": "fire_station",
+        "phone": "+234-1-7730069",
+        "address": "Broad St, Lagos Island, Lagos",
+        "city": "Lagos",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [7.4850, 9.0500] },
+      "properties": {
+        "osm_id": 700009,
+        "name": "FCT Fire Service Garki",
+        "category": "fire_station",
+        "phone": "+234-9-4610305",
+        "address": "Area 1, Garki, Abuja",
+        "city": "Abuja",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.1750, -22.9100] },
+      "properties": {
+        "osm_id": 700010,
+        "name": "Corpo de Bombeiros Copacabana",
+        "category": "fire_station",
+        "phone": "+55-21-193",
+        "address": "R. Tonelero, 50, Copacabana, Rio de Janeiro",
+        "city": "Rio de Janeiro",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6450, -23.5500] },
+      "properties": {
+        "osm_id": 700011,
+        "name": "Corpo de Bombeiros Liberdade",
+        "category": "fire_station",
+        "phone": "+55-11-193",
+        "address": "R. da Glória, 400, Liberdade, São Paulo",
+        "city": "São Paulo",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-118.2550, 34.0500] },
+      "properties": {
+        "osm_id": 700012,
+        "name": "LAFD Fire Station 3",
+        "category": "fire_station",
+        "phone": "+1-213-485-6203",
+        "address": "108 N Fremont Ave, Los Angeles, CA 90012",
+        "city": "Los Angeles",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [75.8000, 26.9200] },
+      "properties": {
+        "osm_id": 700013,
+        "name": "Jaipur Fire Station MI Road",
+        "category": "fire_station",
+        "phone": "+91-141-2560222",
+        "address": "MI Road, Jaipur",
+        "city": "Jaipur",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1200, 51.5350] },
+      "properties": {
+        "osm_id": 700014,
+        "name": "London Fire Brigade Euston",
+        "category": "fire_station",
+        "phone": "+44-20-85551200",
+        "address": "172 Euston Rd, London NW1 2BJ",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.9550, -19.9250] },
+      "properties": {
+        "osm_id": 700015,
+        "name": "Corpo de Bombeiros BH Centro",
+        "category": "fire_station",
+        "phone": "+55-31-193",
+        "address": "Praça da Estação, 100, Belo Horizonte",
+        "city": "Belo Horizonte",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    }
+  ]
+}

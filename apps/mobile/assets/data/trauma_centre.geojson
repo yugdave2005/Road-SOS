@@ -1,0 +1,230 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.2088, 28.5685] },
+      "properties": {
+        "osm_id": 200001,
+        "name": "AIIMS Trauma Centre",
+        "category": "trauma_centre",
+        "phone": "+91-11-26588700",
+        "address": "Sri Aurobindo Marg, Ansari Nagar East, New Delhi",
+        "city": "New Delhi",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.1734, 28.6414] },
+      "properties": {
+        "osm_id": 200002,
+        "name": "Safdarjung Hospital Trauma Ward",
+        "category": "trauma_centre",
+        "phone": "+91-11-26707437",
+        "address": "Ring Rd, Safdarjung Campus, New Delhi",
+        "city": "New Delhi",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [80.2101, 13.0827] },
+      "properties": {
+        "osm_id": 200003,
+        "name": "Rajiv Gandhi Government General Hospital Trauma",
+        "category": "trauma_centre",
+        "phone": "+91-44-25305000",
+        "address": "EVR Periyar Salai, Park Town, Chennai",
+        "city": "Chennai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-73.9426, 40.7859] },
+      "properties": {
+        "osm_id": 200004,
+        "name": "Mount Sinai Hospital Trauma Center",
+        "category": "trauma_centre",
+        "phone": "+1-212-241-6500",
+        "address": "1 Gustave L. Levy Pl, New York, NY 10029",
+        "city": "New York",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.6050, 41.8786] },
+      "properties": {
+        "osm_id": 200005,
+        "name": "Northwestern Memorial Trauma Unit",
+        "category": "trauma_centre",
+        "phone": "+1-312-926-2000",
+        "address": "251 E Huron St, Chicago, IL 60611",
+        "city": "Chicago",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.0887, 51.5184] },
+      "properties": {
+        "osm_id": 200006,
+        "name": "Royal London Hospital Major Trauma Centre",
+        "category": "trauma_centre",
+        "phone": "+44-20-73777000",
+        "address": "Whitechapel Rd, Whitechapel, London E1 1FR",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-1.9273, 52.4528] },
+      "properties": {
+        "osm_id": 200007,
+        "name": "Queen Elizabeth Hospital Trauma Unit",
+        "category": "trauma_centre",
+        "phone": "+44-121-3712000",
+        "address": "Mindelsohn Way, Edgbaston, Birmingham B15 2TH",
+        "city": "Birmingham",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [3.3497, 6.5170] },
+      "properties": {
+        "osm_id": 200008,
+        "name": "Lagos State Accident and Emergency Centre",
+        "category": "trauma_centre",
+        "phone": "+234-1-2800100",
+        "address": "Admiralty Way, Lekki Phase 1, Lagos",
+        "city": "Lagos",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [7.4951, 9.0301] },
+      "properties": {
+        "osm_id": 200009,
+        "name": "Wuse General Hospital Trauma Unit",
+        "category": "trauma_centre",
+        "phone": "+234-9-5237845",
+        "address": "Wuse Zone 6, Abuja",
+        "city": "Abuja",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.1833, -22.9000] },
+      "properties": {
+        "osm_id": 200010,
+        "name": "Hospital Miguel Couto Emergência",
+        "category": "trauma_centre",
+        "phone": "+55-21-31116800",
+        "address": "R. Mário Ribeiro, 117, Gávea, Rio de Janeiro",
+        "city": "Rio de Janeiro",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6335, -23.5592] },
+      "properties": {
+        "osm_id": 200011,
+        "name": "Hospital das Clínicas Pronto-Socorro",
+        "category": "trauma_centre",
+        "phone": "+55-11-26616000",
+        "address": "R. Dr. Ovídio Pires de Campos, 225, São Paulo",
+        "city": "São Paulo",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-118.2590, 34.0617] },
+      "properties": {
+        "osm_id": 200012,
+        "name": "LAC+USC Medical Center Trauma",
+        "category": "trauma_centre",
+        "phone": "+1-323-226-2622",
+        "address": "2051 Marengo St, Los Angeles, CA 90033",
+        "city": "Los Angeles",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [72.8358, 19.0176] },
+      "properties": {
+        "osm_id": 200013,
+        "name": "KEM Hospital Trauma Centre",
+        "category": "trauma_centre",
+        "phone": "+91-22-24136051",
+        "address": "Acharya Donde Marg, Parel, Mumbai",
+        "city": "Mumbai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1340, 51.5245] },
+      "properties": {
+        "osm_id": 200014,
+        "name": "UCLH Emergency Department",
+        "category": "trauma_centre",
+        "phone": "+44-20-34567891",
+        "address": "250 Euston Rd, London NW1 2PG",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.9650, -19.9190] },
+      "properties": {
+        "osm_id": 200015,
+        "name": "Hospital João XXIII Pronto-Socorro",
+        "category": "trauma_centre",
+        "phone": "+55-31-32399200",
+        "address": "Av. Alfredo Balena, 400, Belo Horizonte",
+        "city": "Belo Horizonte",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    }
+  ]
+}

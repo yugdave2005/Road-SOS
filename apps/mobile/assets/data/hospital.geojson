@@ -1,0 +1,260 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.2088, 28.5672] },
+      "properties": {
+        "osm_id": 100001,
+        "name": "AIIMS Hospital",
+        "category": "hospital",
+        "phone": "+91-11-26588500",
+        "address": "Sri Aurobindo Marg, Ansari Nagar, New Delhi",
+        "city": "New Delhi",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.0688, 28.4595] },
+      "properties": {
+        "osm_id": 100002,
+        "name": "Medanta - The Medicity",
+        "category": "hospital",
+        "phone": "+91-124-4141414",
+        "address": "CH Baktawar Singh Rd, Sector 38, Gurugram",
+        "city": "Gurugram",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [72.8296, 19.0040] },
+      "properties": {
+        "osm_id": 100003,
+        "name": "Lilavati Hospital",
+        "category": "hospital",
+        "phone": "+91-22-26751000",
+        "address": "A-791, Bandra Reclamation, Bandra West, Mumbai",
+        "city": "Mumbai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-73.9419, 40.8394] },
+      "properties": {
+        "osm_id": 100004,
+        "name": "NewYork-Presbyterian Hospital",
+        "category": "hospital",
+        "phone": "+1-212-305-2500",
+        "address": "622 W 168th St, New York, NY 10032",
+        "city": "New York",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.6722, 41.8569] },
+      "properties": {
+        "osm_id": 100005,
+        "name": "Rush University Medical Center",
+        "category": "hospital",
+        "phone": "+1-312-942-5000",
+        "address": "1653 W Congress Pkwy, Chicago, IL 60612",
+        "city": "Chicago",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1736, 51.4994] },
+      "properties": {
+        "osm_id": 100006,
+        "name": "Chelsea and Westminster Hospital",
+        "category": "hospital",
+        "phone": "+44-20-33158000",
+        "address": "369 Fulham Rd, Chelsea, London SW10 9NH",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-1.9517, 52.4495] },
+      "properties": {
+        "osm_id": 100007,
+        "name": "Queen Elizabeth Hospital Birmingham",
+        "category": "hospital",
+        "phone": "+44-121-6271627",
+        "address": "Mindelsohn Way, Edgbaston, Birmingham B15 2GW",
+        "city": "Birmingham",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [3.3894, 6.4474] },
+      "properties": {
+        "osm_id": 100008,
+        "name": "Lagos University Teaching Hospital",
+        "category": "hospital",
+        "phone": "+234-1-7600780",
+        "address": "Ishaga Rd, Idi Araba, Lagos",
+        "city": "Lagos",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [7.4891, 9.0579] },
+      "properties": {
+        "osm_id": 100009,
+        "name": "National Hospital Abuja",
+        "category": "hospital",
+        "phone": "+234-9-4601170",
+        "address": "Plot 132, Central District, Abuja",
+        "city": "Abuja",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.1729, -22.9068] },
+      "properties": {
+        "osm_id": 100010,
+        "name": "Hospital Copa D'Or",
+        "category": "hospital",
+        "phone": "+55-21-25452500",
+        "address": "R. Figueiredo de Magalhães, 875, Copacabana, Rio de Janeiro",
+        "city": "Rio de Janeiro",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6693, -23.5553] },
+      "properties": {
+        "osm_id": 100011,
+        "name": "Hospital Albert Einstein",
+        "category": "hospital",
+        "phone": "+55-11-21511233",
+        "address": "Av. Albert Einstein, 627, Morumbi, São Paulo",
+        "city": "São Paulo",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [80.2338, 13.0604] },
+      "properties": {
+        "osm_id": 100012,
+        "name": "Apollo Hospitals Greams Road",
+        "category": "hospital",
+        "phone": "+91-44-28293333",
+        "address": "21 Greams Ln, Thousand Lights, Chennai",
+        "city": "Chennai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-118.4452, 34.0664] },
+      "properties": {
+        "osm_id": 100013,
+        "name": "UCLA Medical Center",
+        "category": "hospital",
+        "phone": "+1-310-825-9111",
+        "address": "757 Westwood Plaza, Los Angeles, CA 90095",
+        "city": "Los Angeles",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [3.3528, 6.5938] },
+      "properties": {
+        "osm_id": 100014,
+        "name": "Reddington Hospital",
+        "category": "hospital",
+        "phone": "+234-1-2716500",
+        "address": "12 Idowu Martins St, Victoria Island, Lagos",
+        "city": "Lagos",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1052, 51.5246] },
+      "properties": {
+        "osm_id": 100015,
+        "name": "University College Hospital",
+        "category": "hospital",
+        "phone": "+44-20-34567890",
+        "address": "235 Euston Rd, Bloomsbury, London NW1 2BU",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.9506, -19.9282] },
+      "properties": {
+        "osm_id": 100016,
+        "name": "Hospital das Clínicas UFMG",
+        "category": "hospital",
+        "phone": "+55-31-33079100",
+        "address": "Av. Prof. Alfredo Balena, 110, Belo Horizonte",
+        "city": "Belo Horizonte",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [75.8577, 26.9124] },
+      "properties": {
+        "osm_id": 100017,
+        "name": "SMS Hospital Jaipur",
+        "category": "hospital",
+        "phone": "+91-141-2518225",
+        "address": "JLN Marg, Gangwal Park, Jaipur",
+        "city": "Jaipur",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    }
+  ]
+}

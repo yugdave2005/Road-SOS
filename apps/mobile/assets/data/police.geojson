@@ -1,0 +1,230 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.2310, 28.6330] },
+      "properties": {
+        "osm_id": 300001,
+        "name": "Parliament Street Police Station",
+        "category": "police",
+        "phone": "+91-11-23362717",
+        "address": "Parliament St, Connaught Place, New Delhi",
+        "city": "New Delhi",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [72.8258, 18.9388] },
+      "properties": {
+        "osm_id": 300002,
+        "name": "Colaba Police Station",
+        "category": "police",
+        "phone": "+91-22-22151276",
+        "address": "Shahid Bhagat Singh Rd, Colaba, Mumbai",
+        "city": "Mumbai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [80.2707, 13.0827] },
+      "properties": {
+        "osm_id": 300003,
+        "name": "Egmore Police Station",
+        "category": "police",
+        "phone": "+91-44-28540122",
+        "address": "EVK Sampath Salai, Egmore, Chennai",
+        "city": "Chennai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-74.0014, 40.7128] },
+      "properties": {
+        "osm_id": 300004,
+        "name": "NYPD 1st Precinct",
+        "category": "police",
+        "phone": "+1-212-334-0611",
+        "address": "16 Ericsson Pl, New York, NY 10013",
+        "city": "New York",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.6298, 41.8781] },
+      "properties": {
+        "osm_id": 300005,
+        "name": "Chicago Police 18th District",
+        "category": "police",
+        "phone": "+1-312-742-5778",
+        "address": "1160 N Larrabee St, Chicago, IL 60610",
+        "city": "Chicago",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-118.2468, 34.0522] },
+      "properties": {
+        "osm_id": 300006,
+        "name": "LAPD Central Station",
+        "category": "police",
+        "phone": "+1-213-486-6606",
+        "address": "251 E 6th St, Los Angeles, CA 90014",
+        "city": "Los Angeles",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1227, 51.5044] },
+      "properties": {
+        "osm_id": 300007,
+        "name": "Metropolitan Police Westminster",
+        "category": "police",
+        "phone": "+44-20-72301212",
+        "address": "202 Buckingham Palace Rd, London SW1W 9SX",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-1.8904, 52.4862] },
+      "properties": {
+        "osm_id": 300008,
+        "name": "West Midlands Police Lloyd House",
+        "category": "police",
+        "phone": "+44-121-6265000",
+        "address": "Colmore Circus Queensway, Birmingham B4 6NQ",
+        "city": "Birmingham",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [3.3958, 6.4552] },
+      "properties": {
+        "osm_id": 300009,
+        "name": "Bar Beach Police Station",
+        "category": "police",
+        "phone": "+234-1-2618974",
+        "address": "Ahmadu Bello Way, Victoria Island, Lagos",
+        "city": "Lagos",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [7.4913, 9.0574] },
+      "properties": {
+        "osm_id": 300010,
+        "name": "Wuse Police Station",
+        "category": "police",
+        "phone": "+234-9-6720384",
+        "address": "Wuse Zone 3, Abuja",
+        "city": "Abuja",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.1762, -22.9035] },
+      "properties": {
+        "osm_id": 300011,
+        "name": "Delegacia de Polícia Copacabana",
+        "category": "police",
+        "phone": "+55-21-25483547",
+        "address": "R. Hilário de Gouveia, 102, Copacabana, Rio de Janeiro",
+        "city": "Rio de Janeiro",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6388, -23.5505] },
+      "properties": {
+        "osm_id": 300012,
+        "name": "1° Distrito Policial Sé",
+        "category": "police",
+        "phone": "+55-11-31071700",
+        "address": "R. da Consolação, 2375, São Paulo",
+        "city": "São Paulo",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [75.7873, 26.9260] },
+      "properties": {
+        "osm_id": 300013,
+        "name": "Jaipur City Police Station",
+        "category": "police",
+        "phone": "+91-141-2565091",
+        "address": "MI Road, C Scheme, Jaipur",
+        "city": "Jaipur",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.0785, 51.5159] },
+      "properties": {
+        "osm_id": 300014,
+        "name": "City of London Police Bishopsgate",
+        "category": "police",
+        "phone": "+44-20-76012222",
+        "address": "182 Bishopsgate, London EC2M 4NP",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.9345, -19.9167] },
+      "properties": {
+        "osm_id": 300015,
+        "name": "Delegacia de Polícia Savassi",
+        "category": "police",
+        "phone": "+55-31-32612199",
+        "address": "R. Pernambuco, 1000, Savassi, Belo Horizonte",
+        "city": "Belo Horizonte",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    }
+  ]
+}

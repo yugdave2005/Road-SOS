@@ -1,0 +1,230 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [77.2400, 28.6200] },
+      "properties": {
+        "osm_id": 600001,
+        "name": "MRF Tyres Karol Bagh",
+        "category": "puncture_shop",
+        "phone": "+91-11-25720180",
+        "address": "Arya Samaj Rd, Karol Bagh, New Delhi",
+        "city": "New Delhi",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [72.8450, 19.0250] },
+      "properties": {
+        "osm_id": 600002,
+        "name": "Sagar Tyre Puncture Repair",
+        "category": "puncture_shop",
+        "phone": "+91-22-24301234",
+        "address": "LBS Marg, Kurla West, Mumbai",
+        "city": "Mumbai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [80.2600, 13.0700] },
+      "properties": {
+        "osm_id": 600003,
+        "name": "Apollo Tyres Service Centre",
+        "category": "puncture_shop",
+        "phone": "+91-44-28456789",
+        "address": "Anna Nagar, Chennai",
+        "city": "Chennai",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-73.9850, 40.7580] },
+      "properties": {
+        "osm_id": 600004,
+        "name": "Discount Tire & Auto Repair",
+        "category": "puncture_shop",
+        "phone": "+1-212-765-3400",
+        "address": "307 W 52nd St, New York, NY 10019",
+        "city": "New York",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-87.6400, 41.8850] },
+      "properties": {
+        "osm_id": 600005,
+        "name": "Chicago Tire Repair Inc",
+        "category": "puncture_shop",
+        "phone": "+1-312-944-8200",
+        "address": "1445 N Wells St, Chicago, IL 60610",
+        "city": "Chicago",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.0730, 51.5100] },
+      "properties": {
+        "osm_id": 600006,
+        "name": "Kwik Fit Tower Bridge",
+        "category": "puncture_shop",
+        "phone": "+44-20-73783990",
+        "address": "127 Tower Bridge Rd, London SE1 2NL",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-1.8700, 52.4750] },
+      "properties": {
+        "osm_id": 600007,
+        "name": "Halfords Autocentre Digbeth",
+        "category": "puncture_shop",
+        "phone": "+44-121-7727700",
+        "address": "Upper Dean St, Digbeth, Birmingham B5 4SG",
+        "city": "Birmingham",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [3.3850, 6.4600] },
+      "properties": {
+        "osm_id": 600008,
+        "name": "Ojota Vulcanizer Workshop",
+        "category": "puncture_shop",
+        "phone": "+234-803-4521234",
+        "address": "Ikorodu Rd, Ojota, Lagos",
+        "city": "Lagos",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [7.5000, 9.0500] },
+      "properties": {
+        "osm_id": 600009,
+        "name": "Wuse Tyre Repair Centre",
+        "category": "puncture_shop",
+        "phone": "+234-803-7654321",
+        "address": "Wuse Market Area, Abuja",
+        "city": "Abuja",
+        "country": "NG",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.1800, -22.9150] },
+      "properties": {
+        "osm_id": 600010,
+        "name": "Borracharia Express Ipanema",
+        "category": "puncture_shop",
+        "phone": "+55-21-25236700",
+        "address": "R. Visconde de Pirajá, 550, Ipanema, Rio de Janeiro",
+        "city": "Rio de Janeiro",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6600, -23.5650] },
+      "properties": {
+        "osm_id": 600011,
+        "name": "Borracharia Pneus JK",
+        "category": "puncture_shop",
+        "phone": "+55-11-30812345",
+        "address": "R. dos Pinheiros, 800, São Paulo",
+        "city": "São Paulo",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-118.2900, 34.0600] },
+      "properties": {
+        "osm_id": 600012,
+        "name": "Pep Boys Tire Service",
+        "category": "puncture_shop",
+        "phone": "+1-323-937-3600",
+        "address": "5441 Wilshire Blvd, Los Angeles, CA 90036",
+        "city": "Los Angeles",
+        "country": "US",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [75.7900, 26.9150] },
+      "properties": {
+        "osm_id": 600013,
+        "name": "CEAT Tyre Shoppe Jaipur",
+        "category": "puncture_shop",
+        "phone": "+91-141-2365678",
+        "address": "Ajmer Rd, Jaipur",
+        "city": "Jaipur",
+        "country": "IN",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-0.1300, 51.5300] },
+      "properties": {
+        "osm_id": 600014,
+        "name": "National Tyres Euston",
+        "category": "puncture_shop",
+        "phone": "+44-20-73871111",
+        "address": "Drummond Crescent, London NW1 1HT",
+        "city": "London",
+        "country": "GB",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.9500, -19.9200] },
+      "properties": {
+        "osm_id": 600015,
+        "name": "Pneus BH Borracharia",
+        "category": "puncture_shop",
+        "phone": "+55-31-32714500",
+        "address": "Av. Augusto de Lima, 700, Belo Horizonte",
+        "city": "Belo Horizonte",
+        "country": "BR",
+        "last_updated": 1716000000,
+        "data_source": "osm"
+      }
+    }
+  ]
+}

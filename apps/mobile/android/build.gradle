@@ -20,5 +20,35 @@ allprojects {
   }
 }
 
+// Fix for unmaintained libraries (e.g. @react-native-voice/voice) that use
+// outdated Gradle APIs like jcenter() or don't specify compileSdk properly.
+subprojects { subproject ->
+  afterEvaluate {
+    if (subproject.plugins.hasPlugin('com.android.library')) {
+      subproject.android {
+        if (!subproject.android.compileSdkVersion) {
+          compileSdk rootProject.ext.compileSdkVersion
+        }
+        if (subproject.android.namespace == null) {
+          namespace subproject.group ?: subproject.name.replace(':', '.').replace('-', '_')
+        }
+        defaultConfig {
+          if (!minSdkVersion) {
+            minSdkVersion rootProject.ext.minSdkVersion
+          }
+          if (!targetSdkVersion) {
+            targetSdkVersion rootProject.ext.targetSdkVersion
+          }
+        }
+      }
+    }
+    // Remove jcenter from all subproject repositories
+    subproject.repositories.removeAll { repo ->
+      repo instanceof org.gradle.api.artifacts.repositories.MavenArtifactRepository &&
+        repo.url.toString().contains('jcenter')
+    }
+  }
+}
+
 apply plugin: "expo-root-project"
 apply plugin: "com.facebook.react.rootproject"
