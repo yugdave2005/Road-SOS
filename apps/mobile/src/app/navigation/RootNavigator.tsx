@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SosScreen } from '../../features/sos/SosScreen';
 import MapScreen from '../../features/map/MapScreen';
+import PlanTripScreen from '../../features/map/PlanTripScreen';
 import SettingsScreen from '../../features/settings/SettingsScreen';
 import DownloadZoneScreen from '../../features/settings/DownloadZoneScreen';
 import AIHelpScreen from '../../features/ai/AIHelpScreen';
@@ -34,6 +35,29 @@ function SettingsStack() {
   );
 }
 
+function MapStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: theme.colors.surface },
+        headerTintColor: theme.colors.text.primary,
+        headerTitleStyle: { fontWeight: 'bold' },
+      }}
+    >
+      <Stack.Screen 
+        name="MapMain" 
+        component={MapScreen} 
+        options={{ headerShown: false }} 
+      />
+      <Stack.Screen 
+        name="PlanTrip" 
+        component={PlanTripScreen} 
+        options={{ title: 'Plan Trip' }} 
+      />
+    </Stack.Navigator>
+  );
+}
+
 export function RootNavigator() {
   return (
     <Tab.Navigator
@@ -54,7 +78,7 @@ export function RootNavigator() {
       />
       <Tab.Screen 
         name="Map" 
-        component={MapScreen} 
+        component={MapStack} 
         options={{ tabBarLabel: 'Offline Map' }} 
       />
       <Tab.Screen 

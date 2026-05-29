@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Text, ActivityIndicator, Alert } from 'react-native';
-import MapView, { UrlTile, Region, Circle } from 'react-native-maps';
+import { View, StyleSheet, Text, ActivityIndicator, Alert, TouchableOpacity } from 'react-native';
+import MapView, { UrlTile, Region, Circle, Polyline } from 'react-native-maps';
 import { useLocation } from '@shared/hooks/useLocation';
 import { useNearbyPois } from './useNearbyPois';
 import { PoiMarker } from './PoiMarker';
@@ -10,6 +10,9 @@ import { ErrorBoundary } from '@shared/components/ErrorBoundary';
 import * as Location from 'expo-location';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Logger } from '@core/utils/Logger';
+import { useRoute, useNavigation } from '@react-navigation/native';
+import { PoiRepository } from '@core/db/PoiRepository';
+import { useRealm } from '@realm/react';
 
 function MapContent() {
   const { location, errorMsg } = useLocation();
@@ -18,6 +21,15 @@ function MapContent() {
   const [isOnlineFallback, setIsOnlineFallback] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const [homeLocation, setHomeLocation] = useState<{ lat: number; lon: number } | null>(null);
+  
+  const route = useRoute<any>();
+  const navigation = useNavigation<any>();
+  const realm = useRealm();
+  
+  const tripSessionId = route.params?.tripSessionId;
+  const tripRoute = route.params?.route as [number, number][] | undefined;
+  
+  const [tripPois, setTripPois] = useState<any[]>([]);
 
   useEffect(() => {
     async function initMap() {
@@ -46,18 +58,29 @@ function MapContent() {
         setIsReady(true);
       } catch (err) {
         Logger.error('Map initialization failed', err);
-        // ErrorBoundary will catch any throw during render, but async errors need to be handled
       }
     }
 
     initMap();
   }, []);
 
+  useEffect(() => {
+    if (tripSessionId && isReady) {
+      const repo = new PoiRepository(realm);
+      setTripPois(repo.getByTripSession(tripSessionId));
+    } else {
+      setTripPois([]);
+    }
+  }, [tripSessionId, isReady]);
+
   const centerLat = mapCenter?.lat ?? location?.lat ?? 51.5074;
   const centerLon = mapCenter?.lon ?? location?.lon ?? -0.1278;
   
   // Local Realm query, no network
   const pois = useNearbyPois({ lat: centerLat, lon: centerLon, radiusKm: 25 });
+  
+  // Merge regular POIs with trip POIs if a trip is active
+  const displayPois = tripSessionId ? [...pois, ...tripPois] : pois;
 
   if (!isReady) {
     return (
@@ -68,15 +91,27 @@ function MapContent() {
     );
   }
 
+  const handlePlanTrip = () => {
+    navigation.navigate('PlanTrip');
+  };
+
+  const handleClearTrip = () => {
+    if (tripSessionId) {
+      const repo = new PoiRepository(realm);
+      repo.clearTripSession(tripSessionId);
+      navigation.setParams({ tripSessionId: undefined, route: undefined });
+    }
+  };
+
   return (
     <View style={styles.container}>
       <MapView
         style={styles.map}
         initialRegion={{
-          latitude: centerLat,
-          longitude: centerLon,
-          latitudeDelta: 0.1,
-          longitudeDelta: 0.1,
+          latitude: tripRoute?.[0]?.[0] ?? centerLat,
+          longitude: tripRoute?.[0]?.[1] ?? centerLon,
+          latitudeDelta: tripRoute ? 0.5 : 0.1,
+          longitudeDelta: tripRoute ? 0.5 : 0.1,
         }}
         onRegionChangeComplete={(region: Region) => {
           setMapCenter({ lat: region.latitude, lon: region.longitude });
@@ -103,14 +138,37 @@ function MapContent() {
           />
         )}
 
-        {pois.map((poi) => (
+        {tripRoute && (
+          <Polyline 
+            coordinates={tripRoute.map(c => ({ latitude: c[0], longitude: c[1] }))} 
+            strokeColor={theme.colors.policeBlue}
+            strokeWidth={4}
+          />
+        )}
+
+        {displayPois.map((poi, idx) => (
           <PoiMarker 
-            key={poi.osmId} 
+            key={`${poi.osmId}-${idx}`} 
             poi={poi} 
             userLocation={location}
           />
         ))}
       </MapView>
+
+      <View style={styles.topActions}>
+        <TouchableOpacity style={styles.planTripBtn} onPress={handlePlanTrip}>
+          <Text style={styles.planTripText}>Plan Offline Trip</Text>
+        </TouchableOpacity>
+      </View>
+
+      {tripSessionId && (
+        <View style={styles.tripBanner}>
+          <Text style={styles.tripBannerText}>Active Trip Corridor ({tripPois.length} POIs)</Text>
+          <TouchableOpacity onPress={handleClearTrip} style={styles.clearTripBtn}>
+            <Text style={styles.clearTripText}>Clear</Text>
+          </TouchableOpacity>
+        </View>
+      )}
 
       {isOnlineFallback && (
         <View style={styles.onlineBadge}>
@@ -152,6 +210,57 @@ const styles = StyleSheet.create({
   map: {
     flex: 1,
   },
+  topActions: {
+    position: 'absolute',
+    top: 60,
+    left: 16,
+    zIndex: 10,
+  },
+  planTripBtn: {
+    backgroundColor: theme.colors.surfaceElevated,
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 20,
+    borderColor: theme.colors.border,
+    borderWidth: 1,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+  },
+  planTripText: {
+    color: theme.colors.text.primary,
+    fontWeight: '700',
+  },
+  tripBanner: {
+    position: 'absolute',
+    top: 110,
+    left: 16,
+    right: 16,
+    backgroundColor: theme.colors.policeBlue,
+    padding: 12,
+    borderRadius: theme.radius.sm,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    zIndex: 10,
+  },
+  tripBannerText: {
+    color: theme.colors.text.primary,
+    fontWeight: '700',
+  },
+  clearTripBtn: {
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 12,
+  },
+  clearTripText: {
+    color: '#FFF',
+    fontSize: 12,
+    fontWeight: '700',
+  },
   onlineBadge: {
     position: 'absolute',
     top: 60,
@@ -180,4 +289,5 @@ const styles = StyleSheet.create({
     color: theme.colors.text.secondary,
   }
 });
+
 

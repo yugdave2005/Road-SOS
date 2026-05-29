@@ -9,7 +9,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const HOME_LOCATION_KEY = 'ROADSOS_HOME_LOCATION';
 
 export class SyncManager {
+  private static repo: PoiRepository | null = null;
+
   static async initialise(repo: PoiRepository): Promise<void> {
+    this.repo = repo;
     await BackgroundFetch.configure(
       {
         minimumFetchInterval: 1440, // 24 hours in minutes
@@ -30,7 +33,10 @@ export class SyncManager {
     Logger.info('[SyncManager] Initialised background sync.');
   }
 
-  static async performSync(repo: PoiRepository): Promise<void> {
+  static async performSync(repo?: PoiRepository): Promise<void> {
+    const activeRepo = repo || this.repo;
+    if (!activeRepo) return;
+
     const isConnected = await ConnectivityMonitor.isConnected();
     if (!isConnected) {
       Logger.info('[SyncManager] Offline — skipping sync.');
@@ -46,15 +52,16 @@ export class SyncManager {
     Logger.info('[SyncManager] Syncing Home Zone POIs...');
     const bbox = expandBoundingBox(homeLocation.lat, homeLocation.lon, 50);
     const pois = await OverpassClient.fetchPois(bbox);
-    repo.upsertBatch(pois);
+    activeRepo.upsertBatch(pois);
     Logger.info(`[SyncManager] Synced ${pois.length} POIs.`);
   }
 
   static async downloadTripCorridor(
+    sessionId: string,
     routePolyline: [number, number][],
     bufferKm: number = 15
   ): Promise<void> {
-    if (routePolyline.length === 0) return;
+    if (routePolyline.length === 0 || !this.repo) return;
 
     const isConnected = await ConnectivityMonitor.isConnected();
     if (!isConnected) {
@@ -62,7 +69,6 @@ export class SyncManager {
       return;
     }
 
-    // Compute union bounding box of all segments buffered by bufferKm
     let minLat = Infinity, maxLat = -Infinity, minLon = Infinity, maxLon = -Infinity;
 
     for (const [lat, lon] of routePolyline) {
@@ -70,23 +76,23 @@ export class SyncManager {
       if (segBbox.minLat < minLat) minLat = segBbox.minLat;
       if (segBbox.maxLat > maxLat) maxLat = segBbox.maxLat;
       if (segBbox.minLon < minLon) minLon = segBbox.minLon;
-      if (segBbox.maxLon > maxLon) maxLon = segBbox.maxLon;
+      if (segBbox.maxLon > maxLon) maxLon = maxLon;
     }
 
-    Logger.info('[SyncManager] Downloading trip corridor POIs...');
-    // Download POIs for the corridor union bbox
-    // The returned pois are upserted directly — no need for separate trip session tagging in Phase 4
+    Logger.info(`[SyncManager] Downloading trip corridor for session ${sessionId}...`);
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    const timeoutId = setTimeout(() => controller.abort(), 20000);
     try {
       const pois = await OverpassClient.fetchPois({ minLat, maxLat, minLon, maxLon });
       clearTimeout(timeoutId);
-      // Upsert to Realm — in Phase 4 we don't have the full repo reference here,
-      // so we'll expose a module-level singleton approach in Phase 4's app initialisation.
-      Logger.info(`[SyncManager] Downloaded ${pois.length} corridor POIs.`);
+      
+      const taggedPois = pois.map(p => ({ ...p, tripSessionId: sessionId }));
+      this.repo.upsertBatch(taggedPois);
+      Logger.info(`[SyncManager] Synced ${taggedPois.length} corridor POIs for session ${sessionId}.`);
     } catch (e) {
       clearTimeout(timeoutId);
-      Logger.error('[SyncManager] Trip corridor download failed.');
+      Logger.error('[SyncManager] Trip corridor download failed.', e);
+      throw e;
     }
   }
 

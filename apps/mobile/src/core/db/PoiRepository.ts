@@ -36,4 +36,15 @@ export class PoiRepository {
   count(): number {
     return this.realm.objects('Poi').length;
   }
+
+  clearTripSession(sessionId: string): void {
+    this.realm.write(() => {
+      const oldTripPois = this.realm.objects<PoiObject>('Poi').filtered('tripSessionId == $0', sessionId);
+      this.realm.delete(oldTripPois);
+    });
+  }
+
+  getByTripSession(sessionId: string): PoiObject[] {
+    return Array.from(this.realm.objects<PoiObject>('Poi').filtered('tripSessionId == $0', sessionId));
+  }
 }
